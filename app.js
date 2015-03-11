@@ -4,6 +4,11 @@ var swig = require('swig');
 var morgan = require('morgan');
 app.use( morgan('dev') );
 
+app.use(express.static(__dirname + '/public'));
+
+var routes = require('./routes/');
+app.use('/', routes);
+
 app.engine('html', swig.renderFile);
 
 app.set('view engine', 'html');
@@ -15,8 +20,7 @@ var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 // app.get('/', function (req, res) {
 // res.render( 'index', {title: 'Hall of Fame', people: people} );
 // })
-var routes = require('./routes/');
-app.use('/', routes);
+
 
 var server = app.listen(3000, function () {
 
@@ -27,4 +31,4 @@ var server = app.listen(3000, function () {
 
 });
 
-// "test"
+
