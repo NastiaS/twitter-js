@@ -12,9 +12,11 @@ swig.setDefaults({ cache: false });
 
 var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
 
-app.get('/', function (req, res) {
-res.render( 'index', {title: 'Hall of Fame', people: people} );
-})
+// app.get('/', function (req, res) {
+// res.render( 'index', {title: 'Hall of Fame', people: people} );
+// })
+var routes = require('./routes/');
+app.use('/', routes);
 
 var server = app.listen(3000, function () {
 
