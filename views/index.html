@@ -7,25 +7,17 @@
   </div>
   <div class="row">
     <div class="col-md-3">
-      <img src='https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2015-03-02/3897122672_7d15a231fc8e758cffbf_192.jpg'><br>
-      <b>Ian Downie</b><br>
+      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
+      <b>Your Name</b><br>
       100 followers
     </div>
-    <h2>All Tweets</h2>
     <div class="col-md-9">
-     <ul>
+    
       <!-- display tweets here -->
       {% for tweet in tweets %}
-     
-        <li>
-        <!-- <img src="http://images.clipartlogo.com/files/ss/thumb/121/121381129/shiny-ice-star-icon-on-white_small.jpg"> -->
-          <h3>{{tweet.name}}</h3>
-          <p>{{tweet.text}}</p>
-          <a src="google.com">Re-tweet</a>
-        </li>
-       
+        <li>{{tweet.text}}</li>
       {% endfor %}
-     </ul>  
+      
     </div>
   </div>
     
@@ -39,10 +31,6 @@
 <p>This is a bare-bones template.</p>
 <ul>
 {% for tweet in tweets %}
-<<<<<<< Updated upstream
   <li>{{ tweet.name }} : {{ tweet.text }}</li>
-=======
-  <li>{{ tweet.name}}:{{ tweet.text }}</li>
->>>>>>> Stashed changes
 {% endfor %}
 </ul> -->

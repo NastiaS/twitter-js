@@ -57,21 +57,3 @@ code {
 .content .by {
   font-weight: bold;
 }
-
-/**** List Syling ****/
-
-ul{
-  list-style-image: url('http://www.w3schools.com/cssref/donald.gif');
-}
-/*li{
- list-style: none; 
-}*/
-
-li h3{
-  font-weight: bold;
- font-size: 1.5em; 
-}
-img{
-  width: 50px;
-  height: 50px
-}
