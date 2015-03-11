@@ -1,10 +1,19 @@
 var express = require( 'express' );
 var app = express();
+var swig = require('swig');
 var morgan = require('morgan');
 app.use( morgan('dev') );
 
+app.engine('html', swig.renderFile);
+
+app.set('view engine', 'html');
+app.set('views', __dirname + '/views');
+swig.setDefaults({ cache: false });
+
+var people = [{name: 'Full'}, {name: 'Stacker'}, {name: 'Son'}];
+
 app.get('/', function (req, res) {
-  res.send('Hello World!' + "Yep, it works!")
+res.render( 'index', {title: 'Hall of Fame', people: people} );
 })
 
 var server = app.listen(3000, function () {
